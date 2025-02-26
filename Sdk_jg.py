@@ -14,17 +14,17 @@ def maker(dificuldade='medio'):
     sol = solution()
     puzzle = deepcopy(sol)
 
-    # Define o número de células a serem apagadas com base na dificuldade
+    # Define o número de espaços a serem apagadas com base na dificuldade
     if dificuldade == 'facil':
-        apagar_min, apagar_max = 22, 30  # Menos células apagadas
+        apagar_min, apagar_max = 22, 30  # Menos espaços apagados
     elif dificuldade == 'medio':
-        apagar_min, apagar_max = 31, 35  # Número moderado de células apagadas
+        apagar_min, apagar_max = 31, 35  # Número moderado
     elif dificuldade == 'dificil':
-        apagar_min, apagar_max = 36, 40  # Mais células apagadas
+        apagar_min, apagar_max = 36, 40  # Mais espaços vazios
     elif dificuldade == 'inicio':
         apagar_min, apagar_max = 81, 81
 
-    # Apaga células aleatoriamente
+    # Apaga numeros aleatoriamente
     for i in sample(range(81), sample(range(apagar_min, apagar_max + 1), 1)[0]):
         puzzle[i // 9][i % 9] = ''
 
