@@ -148,7 +148,7 @@ class SudokuApp(App):
                 btn = self.cells[row][col]
                 num = self.puzzle[row][col]
 
-                if type(num) == str and num != '' and self.soluOn:  # Se o numero for do tipo string
+                if type(num) == str and self.soluOn:  # Se o numero for do tipo string
                     if btn.text == str(self.solu[row][col]):  # Mostrar a solução
                         btn.color = (0, 1.7, 0, 1)  # Verde para certo
                     else:
